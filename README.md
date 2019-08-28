@@ -219,20 +219,25 @@ Notice: the state of the pedestrian’s position and velocity is updated asynchr
 1.	H (state transition matrix) we use the measurement function to map the state vector into the measurement space of the sensor. To give a concrete example, lidar only measures an object's position (px, py) but the extended Kalman filter models an object's position and velocity. So multiplying by the measurement function H matrix will drop the velocity information from the state vector x.
 
 <p align="right">
-<img src="./img/29.JPG" alt="Measurement Function  " />
+<img src="./img/29.JPG" alt="o	H (state transition matrix " />
 <p align="right">
 
 2.	w: represents sensor measurement noise. Measurement noise refers to uncertainty in sensor measurements. The notation ω∼N(0,R) defines the measurement noise as a Gaussian distribution with mean zero and covariance R. Measurement noise comes from uncertainty in sensor measurements.
 
 3.	z=H∗x+w for the update step (Measurement Function which is a linear function). We use the measurement function to map the state vector into the measurement space of the sensor. To give a concrete example, LIDAR only measures an object's position but the extended Kalman filter models an object's position and velocity. So multiplying by the measurement function H matrix will drop the velocity information from the state vector x. Then the lidar measurement position and our belief about the object's position can be compared. 
 
+<p align="right">
+<img src="./img/30.JPG" alt="Measurement Function  " />
+<p align="right">
+
 
 	
 4.	R, which represents the uncertainty in our sensor measurements. The dimensions of the R matrix is square and each side of its matrix is the same length as the number of measurements parameters z. The matrix R represents the uncertainty in the position measurements we receive from the laser sensor and generally, the parameters for the random noise measurement matrix will be provided by the sensor manufacturer.
 
 <p align="right">
-<img src="./img/29.JPG" alt="the R matrix " />
+<img src="./img/31.JPG" alt="o	R, which represents the uncertainty in our sensor measurements " />
 <p align="right">
+
 
 5.	y=z−Hx′: Now we get some sensor information (z) that tells where the object is relative to the car. First we compare where we think we are with what the sensor data tells us y=z−Hx′.
 
@@ -243,6 +248,9 @@ Notice: the state of the pedestrian’s position and velocity is updated asynchr
 8.	The Kalman Filter update Formula for Laser Measurements:
 
 <p align="right">
-<img src="./img/30.JPG" alt="The Kalman Filter update Formula for Laser Measurements: " />
+<img src="./img/32.JPG" alt="The Kalman Filter update Formula for Laser Measurements: " />
 <p align="right">
 	
+##	 Update Step for Radar Measurements:
+
+Radar sees the world differently, as you can see in the photo our vehicle is at A coordinate and the pedestrian at B coordinate. The x-axis is always points in the vehicle’s direction of movement and the y-axis is always points to the left. Instead of 2D, the Radar can directly measure:
