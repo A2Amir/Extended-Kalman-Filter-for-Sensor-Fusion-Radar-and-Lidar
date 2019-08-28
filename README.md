@@ -136,7 +136,21 @@ Based on the below diagram, the filter (first measurement) will receive initial 
 	1.	We can use the timestamp values to compute the elapsed time 
 		 between two consecutive observations and additionally
 		 we divide the result by 10^6 to transform it from microseconds to seconds
-		 <p align="rught">
+		 <p align="right">
 		<img src="./img/17.JPG" alt="timestamp" />
 		<p align="right">
+	2.	Linear Motion Model, we can predict the next state with help of the old positions plus 			displacement times Δt and plus noise, which has the mean zero.
+		<p align="right">
+		<img src="./img/18.JPG" alt="Linear Motion Model" />
+		<p align="right">
+	3.	F: is a transition matrix that, when multiplied with x, predicts where the object will be 		after time Δt.
+		<p align="right">
+		<img src="./img/19.JPG" alt="F: is a transition matrix " />
+		<p align="right">
+	4.	ν: We assume the object travels at a constant velocity, but in reality, the object might accelerate or decelerate. The notation ν∼N(0,Q) defines the process noise as a Gaussian distribution with mean zero and covariance Q. (The mean = 0 is saying that the mean noise is zero and the uncertainty shows up in the Q matrix as acceleration noise).
+	5.	Q: Motion noise and process noise refer to the same case: uncertainty in the object's position when predicting location. The model assumes velocity is constant between time intervals, but in reality, we know that an object's velocity can change due to acceleration. The model includes this uncertainty via the process noise, which explained in the section (ν). The process noise depends on two things: the elapsed time and the uncertainty of acceleration. We can model the process noise by considering both of these factors.
+			
+		First I am going to show how the acceleration is expressed by the kinematic equation then I use that information to drive the process covariance Q (ν∼N(0,Q)).
+
+
 <p align="right">
