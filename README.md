@@ -113,5 +113,24 @@ By multiplying the measurement and prior Gaussians, you get a Gaussian (black li
 
 Imagine you are in a car equipped with sensors on the outside. The car sensors can detect objects moving around: for example, the sensors might detect a pedestrian. Let's step through the Kalman Filter algorithm using the pedestrian example. We have two sensors(a Lidar and a Radar) and the information provided be these two sensors is used to estimate the state of a moving pedestrian and this state is presented by a 4D state  vector( a x,y position and a x,y velocity).
 
+<p align="center">
+<img src="./img/14.JPG" alt="state  vector " />
+<p align="center">
+	
+*	x is the mean state vector. For an extended Kalman filter, the mean state vector contains information about the object's position and velocity that you are tracking. It is called the "mean" state vector because position and velocity are represented by a Gaussian distribution with mean x.
 
+*	P is the state covariance matrix, which contains information about the uncertainty of the object's position and velocity. 
 
+Based on the below diagram, the filter (first measurement) will receive initial measurements of the pedestrian’s position relative to the car. These measurements will come from a radar or lidar sensor and the filter will initialize the pedestrian’s position based on the first measurement (initialize state and covariance matrices). At this point, the car will receive another sensor measurement after a time period Δt and then we perform two steps, state prediction and measurement update (Each time we receive a new measurement from a given sensor, the estimation function is trigged).
+	
+<p align="center">
+<img src="./img/15.JPG" alt="process chain" />
+<p align="center">
+	
+## In the prediction state (for Radar and Laser Measurements):
+<p align="right">
+<img src="./img/16.JPG" alt="In the prediction state (for Radar and Laser Measurements)" />
+	
+*	We predict the pedestrian’s state by taking to account the elapsed time between the current and the pervious observations, because in the reality the time elapsed between two consecutive observations might vary and is not constant.
+**  	We can use the timestamp values to compute the elapsed time between two consecutive observations and additionally we divide the result by 10^6 to transform it from microseconds to seconds
+<p align="right">
