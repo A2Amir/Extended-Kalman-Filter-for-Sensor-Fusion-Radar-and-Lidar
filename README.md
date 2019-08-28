@@ -399,5 +399,18 @@ Now that we have learned how the extended Kalman filter works, in this section w
 <p align="right">
 <img src="./img/51.JPG" alt="Data File" />
 <p align="right">
+	
 *	Each row represents a sensor measurement where the first column tells you if the measurement comes from radar (R) or lidar (L).
+
+*	For a row containing radar data, the columns are: sensor_type, rho_measured, phi_measured, rhodot_measured, timestamp, x_groundtruth, y_groundtruth, vx_groundtruth, vy_groundtruth, yaw_groundtruth, yawrate_groundtruth.
+
+*	For a row containing lidar data, the columns are: sensor_type, x_measured, y_measured, timestamp, x_groundtruth, y_groundtruth, vx_groundtruth, vy_groundtruth, yaw_groundtruth, yawrate_groundtruth.
+
+*	Whereas radar has three measurements (rho, phi, rhodot), lidar has two measurements (x, y).
+
+*	You will use the measurement values and timestamp in your Kalman filter algorithm. Ground truth, which represents the actual path the bicycle took, is for calculating root mean squared error.
+
+2.	Reading in the Data
+
+
 
