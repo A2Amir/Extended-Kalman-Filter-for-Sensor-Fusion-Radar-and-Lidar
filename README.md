@@ -332,3 +332,36 @@ To derive a linear approximation for the h function, we will only keep the expan
 
 The derivative of h(x) with the respect to x is called Jacobian matrix and is going to be a matrix containing all the partial derivatives, we know, the measurement function describes tree component (Range, Bearing, Range Rate) and my state is a vector with four components (px,py,vx,vy), in that case the Jacobian matric is going to be a matrix with 3 rows and 4 columns.
 	
+
+<p align="right">
+<img src="./img/45.JPG" alt="The derivative of h(x) " />
+<p align="right">
+
+After calculating all the partial derivatives, our resulted Jacobian, Hj is:
+
+<p align="right">
+<img src="./img/46.JPG" alt="After calculating all the partial derivatives " />
+<p align="right">
+	
+Notice: because the linearization points change, we have to recompute the Jacobian matrix at every point in the time.
+
+
+5.	For radar measurement update, Hj is used to calculate S, K and P.
+
+<p align="right">
+<img src="./img/47.JPG" alt="For radar measurement update, Hj is used to calculate S, K and P." />
+<p align="right">
+	
+## Workflow of the extended kalman filter works:
+
+Here the pedestrian’s state at time K is a distribution with mean (X) and covariance (P) and at time k+1 we just received the laser measurement (Cartesian coordinate System) and the first thing to do is to make a prediction about where we think the pedestrian would be at time k+1.
+
+The second thing is to do called measurement update where we combine the pedestrian predicted state with the new laser measurement and what we now have is a more accurate beliefs about the pedestrian’s position at time k+1, this is what we called posterior.
+
+Now we received the radar measurement (Polar coordinate system) at time k+2 and we make again a prediction and then combine the prediction with the radar measurement (the prediction for the radar is the same as in the laser case but what change is the measurement update step because the radar sees the world differently).
+
+<p align="center">
+<img src="./img/48.JPG" alt="Workflow of the extended kalman filter works." />
+<p align="center">
+	
+
