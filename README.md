@@ -328,7 +328,7 @@ Where Df(a) is called the Jacobian matrix and D2f(a) is called the Hessian matri
 <img src="./img/44.JPG" alt="the similarities between the multi-dimensional Taylor series expansion and the one-dimensional Taylor series expansion " />
 <p align="right">
 
-To derive a linear approximation for the h function, we will only keep the expansion up to the Jacobian matrix Df(a). We will ignore the Hessian matrix D2f(a) and other higher order terms. Assuming (x−a) is small, (x−a)2 or the multi-dimensional equivalent (x−a)T (x−a) will be even smaller; the extended Kalman filter we'll be using assumes that higher order terms beyond the Jacobian are negligible.
+To derive a linear approximation for the h function, we will only keep the expansion up to the Jacobian matrix Df(a). We will ignore the Hessian matrix (https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/quadratic-approximations/a/the-hessian) D2f(a) and other higher order terms. Assuming (x−a) is small, (x−a)2 or the multi-dimensional equivalent (x−a)T (x−a) will be even smaller; the extended Kalman filter we'll be using assumes that higher order terms beyond the Jacobian are negligible.
 
 The derivative of h(x) with the respect to x is called Jacobian matrix and is going to be a matrix containing all the partial derivatives, we know, the measurement function describes tree component (Range, Bearing, Range Rate) and my state is a vector with four components (px,py,vx,vy), in that case the Jacobian matric is going to be a matrix with 3 rows and 4 columns.
 	
