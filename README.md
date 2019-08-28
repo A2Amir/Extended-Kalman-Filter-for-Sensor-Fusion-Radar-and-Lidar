@@ -161,14 +161,29 @@ Based on the below diagram, the filter (first measurement) will receive initial 
 	<p align="right">
 	<img src="./img/21.JPG" alt="stochastic part " />
 	<p align="right">
-	
+		
 		The below presented vector can be decomposed into two components:
 
 			A four by two matrix G  which doesn’t contain random components
 			A two by one matrix contains random acceleration components
 			
-			<p align="right">
-			<img src="./img/22.JPG" alt="matrix G " />
-			<p align="right">
-
+	<p align="right">
+	<img src="./img/22.JPG" alt="matrix G " />
+	<p align="right">
+		
+		Based on our noise vector we can define now the new covariance matrix Q. The covariance matrix is defined as the expectation value of the noise vector ν times the noise vector νT:
+	<p align="right">
+	<img src="./img/23.JPG" alt="new covariance matrix Q " />
+	<p align="right">
+	
+		As G does not contain random variables, we can put it outside the expectation calculation.
+	<p align="right">
+	<img src="./img/24.JPG" alt="G does not contain random variables " />
+	<p align="right">
+		
+		This leaves us with three statistical moments: 
+		
+	<p align="right">
+	<img src="./img/25.JPG" alt="three statistical moments " />
+	<p align="right">
 <p align="right">
