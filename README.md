@@ -477,5 +477,27 @@ We already discussed how main.cpp reads in the sensor data. Recall that main.cpp
 ### 6.	FusionEKF.cpp
 Every time main.cpp calls fusionEKF.ProcessMeasurement(measurement_pack_list[k]),the code in FusionEKF.cpp will run. - If this is the first measurement, the Kalman filter will try to initialize the object's location with the sensor measurement.
 
+*	Variables and matrices (x, F, H_laser, H_jacobian, P, etc.) will be Initialized.
+*	The Kalman filter position vector with the first sensor measurements will be initialized.
+*	The F and Q matrices prior to the prediction step based on the elapsed time between measurements will be calculated.
+*	The update step for either the lidar or the radar sensor measurement will be called. 
+
+### 7.	Important Dependencies
+
+•	cmake >= 3.5 
+	o	All OSes: click here for installation instructions (https://cmake.org/install/)
+•	make >= 4.1 
+	o	Linux: make is installed by default on most Linux distros
+	o	Mac: install Xcode command line tools to get make (https://developer.apple.com/xcode/features/)
+	o	Windows: Click here for installation instructions (http://gnuwin32.sourceforge.net/packages/make.htm)
+•	gcc/g++ >= 5.4 
+	o	Linux: gcc / g++ is installed by default on most Linux distros
+	o	Mac: same deal as make - install Xcode command line tools (https://developer.apple.com/xcode/features/)
+	o	Windows: recommend using MinGW (http://www.mingw.org/)
+
+
+
+
+
 
 
