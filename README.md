@@ -150,9 +150,9 @@ Based on the below diagram, the filter (first measurement) will receive initial 
 	4.	ν: We assume the object travels at a constant velocity, but in reality, the object might accelerate or decelerate. The notation ν∼N(0,Q) defines the process noise as a Gaussian distribution with mean zero and covariance Q. (The mean = 0 is saying that the mean noise is zero and the uncertainty shows up in the Q matrix as acceleration noise).
 	5.	Q: Motion noise and process noise refer to the same case: uncertainty in the object's position when predicting location. The model assumes velocity is constant between time intervals, but in reality, we know that an object's velocity can change due to acceleration. The model includes this uncertainty via the process noise, which explained in the section (ν). The process noise depends on two things: the elapsed time and the uncertainty of acceleration. We can model the process noise by considering both of these factors.
 			
-		First I am going to show how the acceleration is expressed by the kinematic equation then I use that information to drive the process covariance Q (ν∼N(0,Q)).
+	First I am going to show how the acceleration is expressed by the kinematic equation then I use that information to drive the process covariance Q (ν∼N(0,Q)).
 
-		Say we have two consecutive observation of the same pedestrian with initial and final velocities then we can drive from the kinematic formula the change in the velocity, in other word including acceleration:		
+	Say we have two consecutive observation of the same pedestrian with initial and final velocities then we can drive from the kinematic formula the change in the velocity, in other word including acceleration:		
 	<p align="right">
 	<img src="./img/20.JPG" alt="acceleration " />
 	<p align="right">
@@ -187,4 +187,10 @@ Based on the below diagram, the filter (first measurement) will receive initial 
 	<p align="right">
 	<img src="./img/25.JPG" alt="three statistical moments " />
 	<p align="right">
+	After combining everything in one matrix, we obtain our 4 by 4 Q matrix:
+	<p align="right">
+	<img src="./img/26.JPG" alt="combining everything in one matrix " />
+	<p align="right">
+		
+	
 <p align="right">
