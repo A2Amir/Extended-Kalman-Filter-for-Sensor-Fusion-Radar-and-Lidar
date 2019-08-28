@@ -1,8 +1,4 @@
-[image1]: (./img/1.jpg) "Gaussian"
-[image2]: ./img/2.jpg "Gaussian formula"
-[image3]: ./img/3.jpg "measurement cycle "
-[image4]: ./img/4.jpg "multiplying two Gaussians"
-[image5]: ./img/5.jpg "Motion Update"
+
 
 ##Kalman Filter and Gaussian distribution
 In Kalman filters the distribution is given by what we called a Gaussian and a Gaussian is a continuous function over the space of locations in the area underneath sums up to one.A Gaussian is characterized by two parameters:
@@ -10,7 +6,7 @@ In Kalman filters the distribution is given by what we called a Gaussian and a G
 
     •	The mean often abbreviated with the Greek letter Mu 
     •	The width of the Gaussian often called Variance.
-<img src=/img/1.jpg alt="Image" width="800" height="600" style="display: block; margin: 0 auto" />
+<img src="./img/1.jpg" alt="Gaussian"  style="display: block; margin: 0 auto" />
 
 The formula of the Gaussian is presented below:
 
