@@ -439,5 +439,43 @@ Files in the Github src Folder, the files you need to work with are in the src f
 *	kalman_filter.cpp- defines the predict function, the update function for lidar, and the update function for radar
 *	tools.cpp- function to calculate RMSE and the Jacobian matrix
 
+### 4.	How the Files Relate to Each Other:
+Here is a brief overview of what happens when you run the code files:
+
+*	Main.cpp reads in the data and sends a sensor measurement to FusionEKF.cpp
+
+*	FusionEKF.cpp takes the sensor data, initializes variables, and updates variables. The Kalman filter equations are not in this file. FusionEKF.cpp has a variable called ekf_, which is an instance of a KalmanFilter class. The ekf_ will hold the matrix and vector values. You will also use the ekf_ instance to call the predict and update equations. 
+
+*	The KalmanFilter class is defined in kalman_filter.cpp (contains functions for the prediction and update steps) and kalman_filter.h.
+
+
+### 5.	Main.cpp
+
+We already discussed how main.cpp reads in the sensor data. Recall that main.cpp reads in the sensor data line by line from the client and stores the data into a measurement object that it passes to the Kalman filter for processing. Also a ground truth list and an estimation list are used for tracking RMSE.
+
+*	main.cpp is made up of several functions within main(), these all handle the uWebsocketIO communication between the simulator and itself and all the main code loops in h.onMessage(), to have access to initial variables that we created at the beginning of main(), we pass pointers as arguments into the header of h.onMessage(). 
+
+<p align="right">
+<img src="./img/53.JPG" alt="'main.cpp'" />
+<p align="right">
+
+*	The rest of the arguments in h.onMessage are used to set up the server.
+*	The below code is:
+
+	*	creating an instance of the FusionEKF class
+	*	Receiving the measurement data calling the ProcessMeasurement() function. ProcessMeasurement() is responsible for the initialization of the Kalman filter as well as calling the prediction and update steps of the Kalman filter. The ProcessMeasurement() function is built in FusionEKF.cpp
+
+
+<p align="right">
+<img src="./img/54.JPG" alt="'FusionEKF.cpp" />
+<p align="right">
+
+*	Finally, The rest of main.cpp will output the following results to the simulator:
+	*	estimation position
+	*	Calculated RMSE (RMSE function is implemented in the tools.cpp file.)
+	
+### 6.	FusionEKF.cpp
+Every time main.cpp calls fusionEKF.ProcessMeasurement(measurement_pack_list[k]),the code in FusionEKF.cpp will run. - If this is the first measurement, the Kalman filter will try to initialize the object's location with the sensor measurement.
+
 
 
