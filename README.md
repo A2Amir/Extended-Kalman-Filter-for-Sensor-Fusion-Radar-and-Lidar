@@ -6,11 +6,13 @@ In Kalman filters the distribution is given by what we called a Gaussian and a G
 
     •	The mean often abbreviated with the Greek letter Mu 
     •	The width of the Gaussian often called Variance.
+    
 <img src="./img/1.jpg" alt="Gaussian"  style="display: block; margin: 0 auto" />
 
 The formula of the Gaussian is presented below:
 
-![alt text][image2]
+<img src="./img/2.jpg" alt="The formula of the Gaussian "  style="display: block; margin: 0 auto" />
+
 
 To track objects, the Kalman Filter represents our distributions by Gaussians and iterates on two main cycles. The key concepts from these cycles referenced in the below:
 
@@ -28,13 +30,17 @@ The second cycle is the Motion Update (Prediction).
 
 I am going to talk about the measurement cycle using Gaussians: Suppose we are localizing another vehicle which has a distribution (called prior) that looks like as follow (black line) now we get a measurement that tell us something about localization of the vehicle (blue line) .
 
-![alt text][image3]
+<img src="./img/3.jpg" alt="The first cycle is the Measurement Update"  style="display: block; margin: 0 auto" />
+
 
 By multiplying two Gaussians (prior and Measurement), the new mean and covariance of the subsequent Gaussian (measurement update) has a smaller covariance then the measurement and prior distribution (Notice: wide covariance means we are uncertain about localization and smaller covariance means we are more certain about localization)
 
-![alt text][image4]
+
+<img src="./img/4.jpg" alt="multiplying two Gaussians "  style="display: block; margin: 0 auto" />
+
 
 ### The second cycle is the Motion Update (Prediction):
 Suppose the robot lives in the life like below (blue line) and want to move to the right side with a certain distance, the motion(green line) has itself its own set of uncertainty r2 (because the motion tends to lost information ), which adds to the uncertainty of the current uncertainty σ2 and leads to a new Gaussian with high uncertainty  σ2 prime (red line):
 
-![alt text][image5]
+<img src="./img/4.jpg" alt="The second cycle is the Motion Update (Prediction) "  style="display: block; margin: 0 auto" />
+
