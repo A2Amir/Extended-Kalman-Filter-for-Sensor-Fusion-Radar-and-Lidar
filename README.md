@@ -1,4 +1,4 @@
-->[image1]: ./img/1.jpg "Gaussian" <-
+[image1]: ./img/1.jpg "Gaussian"
 [image2]: ./img/2.jpg "Gaussian formula"
 [image3]: ./img/3.jpg "measurement cycle 
 [image4]: ./img/4.jpg "multiplying two Gaussians"
