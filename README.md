@@ -260,9 +260,9 @@ Radar sees the world differently, as you can see in the photo our vehicle is at 
 <img src="./img/33.JPG" alt="Radar measurement" />
 <p align="right">
 	
-<p align="center">
+<p align="right">
 <img src="./img/34.JPG" alt="Radar measurement" />
-<p align="center">
+<p align="right">
 	
 Using Doppler effects the Radar can directly measure the radial velocity of a moving object and the radial velocity is the component (ρ˙) of the velocity moving towards or away from the sensor. 
 
@@ -279,43 +279,56 @@ Using Doppler effects the Radar can directly measure the radial velocity of a mo
 <p align="right">
 	
 3.	y=z−h(x′): Our state (x′) from the prediction step still has four parameter as the same and as before said the measurement vector has 3 parameters, in order to calculate y=z−h(x′) we need a measurement function that maps the predicted state(x′) into measurement space:
+
 <p align="right">
 <img src="./img/37.JPG" alt="measurement function   " />
 <p align="right">
-	The h is nonlinear function that specifies how the predicted position and speed get mapped to the polar coordinates of range, bearing and range rate and h function is presented below:
-<p align="right">
-<img src="./img/38.JPG" alt="h is nonlinear function   " />
-<p align="right">
-	Notice: One other important point when calculating y with radar sensor data: the second value in the polar coordinate vector is the angle ϕ. You will need to make sure to normalize ϕ in the y vector so that its angle is between –π and π.
+	
+The h is nonlinear function that specifies how the predicted position and speed get mapped to the 	polar coordinates of range, bearing and range rate and h function is presented below:
+	<p align="right">
+	<img src="./img/38.JPG" alt="h is nonlinear function   " />
+	<p align="right">
+
+Notice: One other important point when calculating y with radar sensor data: the second 	value in the polar coordinate vector is the angle ϕ. You will need to make sure to normalize ϕ in 	the y vector so that its angle is between –π and π.
 
 4.	Hj : After applying a nonlinear measurement function, we have 3-measurement vector component (z) which cannot be used for the Kalman Filter equations to update the predicted state (with new measurements) because we are not working with the Gaussian distribution after applying a nonlinear measurement.
+To understand the problem I used a Gaussian (1) from 10,000 random values in a normal distribution with a mean of 0 then applied (2) a nonlinear function (arctan) to transform each value as you can see in 3 the resulting distribution is not any more a Gaussian distribution.
 
-	To understand the problem I used a Gaussian (1) from 10,000 random values in a normal distribution with a mean of 0 then applied (2) a nonlinear function (arctan) to transform each value as you can see in 3 the resulting distribution is not any more a Gaussian distribution.
 <p align="right">
 <img src="./img/39.JPG" alt="a nonlinear function (arctan) to transform each value  " />
 <p align="right">
-	To solve this problem, we have to approximate (linearize) our measurement function to a linear function, which is the key idea of the extended Kalman filter. I repeated the test by using a linear approximation. Notice how the blue graph, the output, remains a Gaussian after applying a first order Taylor expansion.
+
+To solve this problem, we have to approximate (linearize) our measurement function to a linear function, which is the key idea of the extended Kalman filter. I repeated the test by using a linear approximation. Notice how the blue graph, the output, remains a Gaussian after applying a first order Taylor expansion.
+
 <p align="right">
 <img src="./img/40.JPG" alt="after applying a first order Taylor expansion  " />
 <p align="right">
-	The extended kalman filter uses a method called First Order Tylor Expansion:
+
+The extended kalman filter uses a method called First Order Tylor Expansion:
+
 <p align="right">
 <img src="./img/41.JPG" alt="First Order Tylor Expansion: " />
 <p align="right">
-	What we do is we first evaluate the nonlinear function h at the mean location (μ), which is the best estimate of our predicted distribution then we extrapolate a line with slope around μ and this slope is given by the first derivative of h.
-	<p align="right">
+
+What we do is we first evaluate the nonlinear function h at the mean location (μ), which is the best estimate of our predicted distribution then we extrapolate a line with slope around μ and this slope is given by the first derivative of h.
+
+<p align="right">
 <img src="./img/42.JPG" alt=" function h : " />
 <p align="right">
-	Now that you have seen how to do a Taylor series expansion with a one-dimensional equation, we will need to look at the Taylor series expansion for multi-dimensional equations. We will need to use a multi-dimensional Taylor series expansion to make a linear approximation of the h function. Here is a general formula for the multi-dimensional Taylor series expansion:
-		<p align="right">
+
+Now that you have seen how to do a Taylor series expansion with a one-dimensional equation, we will need to look at the Taylor series expansion for multi-dimensional equations. We will need to use a multi-dimensional Taylor series expansion to make a linear approximation of the h function. Here is a general formula for the multi-dimensional Taylor series expansion:
+
+<p align="right">
 <img src="./img/43.JPG" alt="multi-dimensional Taylor series expansion  " />
 <p align="right">
-	Where Df(a) is called the Jacobian matrix and D2f(a) is called the Hessian matrix. They represent first order and second order derivatives of multi-dimensional equations. A full Taylor series expansion would include higher order terms as well for the third order derivatives, fourth order derivatives, and so on. Notice the similarities between the multi-dimensional Taylor series expansion and the one-dimensional Taylor series expansion:
-	<p align="right">
+
+Where Df(a) is called the Jacobian matrix and D2f(a) is called the Hessian matrix. They represent first order and second order derivatives of multi-dimensional equations. A full Taylor series expansion would include higher order terms as well for the third order derivatives, fourth order derivatives, and so on. Notice the similarities between the multi-dimensional Taylor series expansion and the one-dimensional Taylor series expansion:
+
+<p align="right">
 <img src="./img/44.JPG" alt="the similarities between the multi-dimensional Taylor series expansion and the one-dimensional Taylor series expansion " />
 <p align="right">
-	To derive a linear approximation for the h function, we will only keep the expansion up to the Jacobian matrix Df(a). We will ignore the Hessian matrix D2f(a) and other higher order terms. Assuming (x−a) is small, (x−a)2 or the multi-dimensional equivalent (x−a)T (x−a) will be even smaller; the extended Kalman filter we'll be using assumes that higher order terms beyond the Jacobian are negligible.
-	The derivative of h(x) with the respect to x is called Jacobian matrix and is going to be a matrix containing all the partial derivatives, we know, the measurement function describes tree component (Range, Bearing, Range Rate) and my state is a vector with four components (px,py,vx,vy), in that case the Jacobian matric is going to be a matrix with 3 rows and 4 columns.
-	
-	
+
+To derive a linear approximation for the h function, we will only keep the expansion up to the Jacobian matrix Df(a). We will ignore the Hessian matrix D2f(a) and other higher order terms. Assuming (x−a) is small, (x−a)2 or the multi-dimensional equivalent (x−a)T (x−a) will be even smaller; the extended Kalman filter we'll be using assumes that higher order terms beyond the Jacobian are negligible.
+
+The derivative of h(x) with the respect to x is called Jacobian matrix and is going to be a matrix containing all the partial derivatives, we know, the measurement function describes tree component (Range, Bearing, Range Rate) and my state is a vector with four components (px,py,vx,vy), in that case the Jacobian matric is going to be a matrix with 3 rows and 4 columns.
 	
