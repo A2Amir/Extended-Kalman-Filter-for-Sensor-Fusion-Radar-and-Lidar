@@ -197,7 +197,7 @@ Based on the below diagram, the filter (first measurement) will receive initial 
 		
 	6.	x′: The x′=Fx+Bu+ν equation does these prediction calculations for us but then Bu was crossed out leaving x′=Fx+ν. The noise mean = 0 is saying that the mean noise is zero. The equation then becomes x′=F∗x.o	x′: The x′=Fx+Bu+ν equation does these prediction calculations for us but then Bu was crossed out leaving x′=Fx+ν. The noise mean = 0 is saying that the mean noise is zero. The equation then becomes x′=F∗x.
 	<p align="right">
-	<img src="./img/26.JPG" alt="prediction calculations  " />
+	<img src="./img/27.JPG" alt="prediction calculations  " />
 	<p align="right">
 		
 	7.	P′=FPFT +Q represents this increase in uncertainty.
@@ -209,7 +209,7 @@ Based on the below diagram, the filter (first measurement) will receive initial 
 Uses new observations to correct our belief about the state of the predictions and depends on sensor type (Lidar and Radar). If a laser sensor generates the current measurement, we just apply a standard kalman filter to update the pedestrian state and why radar measurements involves a non-linear measurement function when we receive a radar measurement, we use the extended kalman filter to measurement update.
 
 <p align="center">
-<img src="./img/27.JPG" alt="In The measurement update " />
+<img src="./img/28.JPG" alt="In The measurement update " />
 <p align="center">
 	
 Notice: the state of the pedestrian’s position and velocity is updated asynchronously each time the measurement received regardless of the source sensor.
@@ -229,7 +229,7 @@ Notice: the state of the pedestrian’s position and velocity is updated asynchr
 4.	R, which represents the uncertainty in our sensor measurements. The dimensions of the R matrix is square and each side of its matrix is the same length as the number of measurements parameters z. The matrix R represents the uncertainty in the position measurements we receive from the laser sensor and generally, the parameters for the random noise measurement matrix will be provided by the sensor manufacturer.
 
 <p align="right">
-<img src="./img/27.JPG" alt="the R matrix " />
+<img src="./img/29.JPG" alt="the R matrix " />
 <p align="right">
 
 5.	y=z−Hx′: Now we get some sensor information (z) that tells where the object is relative to the car. First we compare where we think we are with what the sensor data tells us y=z−Hx′.
@@ -241,6 +241,6 @@ Notice: the state of the pedestrian’s position and velocity is updated asynchr
 8.	The Kalman Filter update Formula for Laser Measurements:
 
 <p align="right">
-<img src="./img/28.JPG" alt="o	The Kalman Filter update Formula for Laser Measurements: " />
+<img src="./img/30.JPG" alt="The Kalman Filter update Formula for Laser Measurements: " />
 <p align="right">
 	
