@@ -392,9 +392,9 @@ Now that we have learned how the extended Kalman filter works, in this section w
 <img src="./img/50.JPG" alt="Implementation of the Extended Kalman Filter for Sensor Fusion" />
 <p align="center">
 
-1.	Explanation of the Data File
+### 1.	Explanation of the Data File
 
-	Lidar measurements are red circles, radar measurements are blue circles with an arrow pointing in the direction of the observed angle, and estimation markers are green triangles. The simulator will be using this data file, and feed main.cpp values from it one line at a time.
+Lidar measurements are red circles, radar measurements are blue circles with an arrow pointing in the direction of the observed angle, and estimation markers are green triangles. The simulator will be using this data file, and feed main.cpp values from it one line at a time.
 	
 <p align="right">
 <img src="./img/51.JPG" alt="Data File" />
@@ -411,7 +411,7 @@ Now that we have learned how the extended Kalman filter works, in this section w
 *	You will use the measurement values and timestamp in your Kalman filter algorithm. Ground truth, which represents the actual path the bicycle took, is for calculating root mean squared error.
 
 
-2.	Reading in the Data
+### 2.	Reading in the Data
 
 *	It provided code that will read in and parse the data files for you. This code is in the main.cpp file. The main.cpp file creates instances of a MeasurementPackage.
 
@@ -423,7 +423,7 @@ Now that we have learned how the extended Kalman filter works, in this section w
 	
 *	The ground truth [px, py,vx,vy] for each line in the data file gets pushed onto ground_truth so RMSE can be calculated later from tools.cpp.
 
-3.	File Structure
+### 3.	File Structure
 
 To review what we learned in the extended Kalman filter lectures, let's discuss the three main steps for programming a Kalman filter:
 
