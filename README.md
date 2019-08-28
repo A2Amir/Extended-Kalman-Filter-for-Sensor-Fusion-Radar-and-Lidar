@@ -254,3 +254,45 @@ Notice: the state of the pedestrian’s position and velocity is updated asynchr
 ##	 Update Step for Radar Measurements:
 
 Radar sees the world differently, as you can see in the photo our vehicle is at A coordinate and the pedestrian at B coordinate. The x-axis is always points in the vehicle’s direction of movement and the y-axis is always points to the left. Instead of 2D, the Radar can directly measure:
+
+
+<p align="right">
+<img src="./img/33.JPG" alt="Radar " />
+<p align="right">
+	
+Using Doppler effects the Radar can directly measure the radial velocity of a moving object and the radial velocity is the component (ρ˙) of the velocity moving towards or away from the sensor. 
+
+1.	z: Measurement vector is 3-measurement vector component:
+
+<p align="right">
+<img src="./img/34.JPG" alt="o	z: Measurement vector  " />
+<p align="right">
+	
+2.	R: Radar measurement Covariance becomes a 3by 3 diagonal matrix (considering that the tree measurement vector component are not cross-correlated).
+
+<p align="right">
+<img src="./img/35.JPG" alt="z: R: Radar measurement Covariance  " />
+<p align="right">
+	
+3.	y=z−h(x′): Our state (x′) from the prediction step still has four parameter as the same and as before said the measurement vector has 3 parameters, in order to calculate y=z−h(x′) we need a measurement function that maps the predicted state(x′) into measurement space:
+
+<p align="right">
+<img src="./img/36.JPG" alt="measurement function   " />
+<p align="right">
+	
+The h is nonlinear function that specifies how the predicted position and speed get mapped to the polar coordinates of range, bearing and range rate and h function is presented below:
+
+<p align="right">
+<img src="./img/37.JPG" alt="h is nonlinear function   " />
+<p align="right">
+	
+Notice: One other important point when calculating y with radar sensor data: the second value in the polar coordinate vector is the angle ϕ. You will need to make sure to normalize ϕ in the y vector so that its angle is between –π and π.
+
+4.	Hj : After applying a nonlinear measurement function, we have 3-measurement vector component (z) which cannot be used for the Kalman Filter equations to update the predicted state (with new measurements) because we are not working with the Gaussian distribution after applying a nonlinear measurement.
+
+To understand the problem I used a Gaussian (1) from 10,000 random values in a normal distribution with a mean of 0 then applied (2) a nonlinear function (arctan) to transform each value as you can see in 3 the resulting distribution is not any more a Gaussian distribution.
+
+<p align="right">
+<img src="./img/38.JPG" alt="a nonlinear function (arctan) to transform each value  " />
+<p align="right">
+	
