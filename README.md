@@ -49,7 +49,7 @@ Suppose the robot lives in the life like below (blue line) and want to move to t
 
 This leads to increased uncertainty over the initial uncertainty and the maths for this is really easy:
 <p align="center">
-<img src="./img/6.jpg" alt="uncertainty over the initial uncertainty  " />
+<img src="./img/6.JPG" alt="uncertainty over the initial uncertainty  " />
 <p align="center">
 
 ## That was a full kalman filter for 1D case but in the reality, we have many dimensions:
@@ -86,6 +86,7 @@ For two-dimensional space, a two dimensional Gaussian is defined over the space 
 <p align="center">
 <img src="./img/11.JPG" alt=" correlation " />
 <p align="center">
+	
 ## Another Example that can explain a Kalman filter is presented below:
     
 Suppose we have two dimensions (one for the location, which is observable from the sensor and denoted by x, and one for the velocity, which is not observable from the sensor and denoted by x dot) 
@@ -103,6 +104,14 @@ By multiplying the measurement and prior Gaussians, you get a Gaussian (black li
 	They separate into two subsets:
         o	Observable (like the position)
         o	Hidden which can never directly observed (in our example velocity) and because these two thing interact (observable variables give us information about hidden information) we can estimate or inference what these hidden variables are.
+<p align="center">
+<img src="./img/13.JPG" alt=" Variables of a Kalman Filter   " />
+<p align="center">
+	
+## Extended Kalman Filter:
+### It is extended in the sense that it will be capable of handling more complex motion model and measurement models and consists of an endless loop of prediction and update state.
+
+Imagine you are in a car equipped with sensors on the outside. The car sensors can detect objects moving around: for example, the sensors might detect a pedestrian. Let's step through the Kalman Filter algorithm using the pedestrian example. We have two sensors(a Lidar and a Radar) and the information provided be these two sensors is used to estimate the state of a moving pedestrian and this state is presented by a 4D state  vector( a x,y position and a x,y velocity).
 
 
 
