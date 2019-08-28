@@ -35,12 +35,11 @@ I am going to talk about the measurement cycle using Gaussians: Suppose we are l
 
 By multiplying two Gaussians (prior and Measurement), the new mean and covariance of the subsequent Gaussian (measurement update) has a smaller covariance then the measurement and prior distribution (Notice: wide covariance means we are uncertain about localization and smaller covariance means we are more certain about localization)
 
-
-<img src="./img/4.jpg" alt="multiplying two Gaussians "  style="display: block; margin: 0 auto" />
+<img src="./img/4.JPG" alt="multiplying two Gaussians"  style="display: block; margin: 0 auto" />
 
 
 ### The second cycle is the Motion Update (Prediction):
 Suppose the robot lives in the life like below (blue line) and want to move to the right side with a certain distance, the motion(green line) has itself its own set of uncertainty r2 (because the motion tends to lost information ), which adds to the uncertainty of the current uncertainty σ2 and leads to a new Gaussian with high uncertainty  σ2 prime (red line):
 
-<img src="./img/4.jpg" alt="The second cycle is the Motion Update (Prediction) "  style="display: block; margin: 0 auto" />
+<img src="./img/5.jpg" alt="The second cycle is the Motion Update (Prediction) "  style="display: block; margin: 0 auto" />
 
