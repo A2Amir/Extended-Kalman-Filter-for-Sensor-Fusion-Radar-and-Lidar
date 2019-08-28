@@ -133,6 +133,7 @@ Based on the below diagram, the filter (first measurement) will receive initial 
 	
 *	We predict the pedestrian’s state by taking to account the elapsed time between the current and the pervious observations, because in the reality the time elapsed between two consecutive observations might vary and is not constant.
 
-		 We can use the timestamp values to compute the elapsed time between two consecutive observations and additionally we divide the result by 10^6
-		 to transform it from microseconds to seconds
+		 We can use the timestamp values to compute the elapsed time 
+		 between two consecutive observations and additionally
+		 we divide the result by 10^6 to transform it from microseconds to seconds
 <p align="right">
