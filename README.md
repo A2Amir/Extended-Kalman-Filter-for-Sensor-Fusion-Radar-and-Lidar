@@ -484,20 +484,34 @@ Every time main.cpp calls fusionEKF.ProcessMeasurement(measurement_pack_list[k])
 
 ### 7.	Important Dependencies
 
-•	cmake >= 3.5 
-	o	All OSes: click here for installation instructions (https://cmake.org/install/)
-•	make >= 4.1 
-	o	Linux: make is installed by default on most Linux distros
-	o	Mac: install Xcode command line tools to get make (https://developer.apple.com/xcode/features/)
-	o	Windows: Click here for installation instructions (http://gnuwin32.sourceforge.net/packages/make.htm)
-•	gcc/g++ >= 5.4 
-	o	Linux: gcc / g++ is installed by default on most Linux distros
-	o	Mac: same deal as make - install Xcode command line tools (https://developer.apple.com/xcode/features/)
-	o	Windows: recommend using MinGW (http://www.mingw.org/)
+*	cmake >= 3.5 
+	*	All OSes: click here for installation instructions (https://cmake.org/install/)
+*	make >= 4.1 
+	*	Linux: make is installed by default on most Linux distros
+	*	Mac: install Xcode command line tools to get make (https://developer.apple.com/xcode/features/)
+	*	Windows: Click here for installation instructions (http://gnuwin32.sourceforge.net/packages/make.htm)
+*	gcc/g++ >= 5.4 
+	*	Linux: gcc / g++ is installed by default on most Linux distros
+	*	Mac: same deal as make - install Xcode command line tools (https://developer.apple.com/xcode/features/)
+	*	Windows: recommend using MinGW (http://www.mingw.org/)
 
 
 
+### 8.	Build Instructions
+*	First, clone this repo.
+*	This project can be used with a Simulator, which can be downloaded here(https://github.com/udacity/self-driving-car-sim/releases)
+*	In order to use the simulator, we need to install uWebSocketIO so that it can communicate with the C++ program--The simulator is the client, and the C++ program is the web server. To install it download uWebSocketIO(https://github.com/uNetworking/uWebSockets) then:
+	*	chmod +x install-mac.sh
+	*	./install-mac.sh
 
+*	Once the install for uWebSocketIO is complete, the main program can be built--with the completed code--and run by doing the following from the project top directory.
+	*	Make the build directory: mkdir build && cd build
+	*	Compile: cmake .. && make
+	*	Run it: ./ExtendedKF path/to/input.txt
+*	e.g: ./ExtendedKF ../data/sample-laser-radar-measurement-data-1.txt
+*	This repository includes two files that can be used to set up and install uWebSocketIO for either Linux or Mac systems. For windows you can use either Docker, VMware, or even Windows 10 Bash on Ubuntu to install uWebSocketIO.
+
+	
 
 
 
