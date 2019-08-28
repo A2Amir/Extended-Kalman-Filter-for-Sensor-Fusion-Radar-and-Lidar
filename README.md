@@ -410,12 +410,34 @@ Now that we have learned how the extended Kalman filter works, in this section w
 
 *	You will use the measurement values and timestamp in your Kalman filter algorithm. Ground truth, which represents the actual path the bicycle took, is for calculating root mean squared error.
 
-2.		Reading in the Data
+
+2.	Reading in the Data
 
 *	It provided code that will read in and parse the data files for you. This code is in the main.cpp file. The main.cpp file creates instances of a MeasurementPackage.
 
 *	If you look inside 'main.cpp', you will see code like:
 
+<p align="right">
+<img src="./img/52.JPG" alt="'main.cpp'" />
+<p align="right">
+	
+*	The ground truth [px, py,vx,vy] for each line in the data file gets pushed onto ground_truth so RMSE can be calculated later from tools.cpp.
+
+3.	File Structure
+
+To review what we learned in the extended Kalman filter lectures, let's discuss the three main steps for programming a Kalman filter:
+
+*	initializing Kalman filter variables
+*	predicting where our object is going to be after a time step Δt
+*	updating where our object is based on sensor measurements
+
+Then the prediction and update steps repeat themselves in a loop. To measure how well our Kalman filter performs, we will then calculate root mean squared error comparing the Kalman filter results with the provided ground truth. These three steps (initialize, predict, update) plus calculating RMSE encapsulate the entire extended Kalman filter project.
+
+Files in the Github src Folder, the files you need to work with are in the src folder of the github repository:
+*	main.cpp - communicates with the Simulator receiving data measurements, calls a function to run the Kalman filter, calls a function to calculate RMSE
+*	FusionEKF.cpp - initializes the filter, calls the predict function, calls the update function
+*	kalman_filter.cpp- defines the predict function, the update function for lidar, and the update function for radar
+*	tools.cpp- function to calculate RMSE and the Jacobian matrix
 
 
 
