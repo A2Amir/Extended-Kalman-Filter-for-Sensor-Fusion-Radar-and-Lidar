@@ -192,12 +192,14 @@ Based on the below diagram, the filter (first measurement) will receive initial 
 	<p align="right">
 	<img src="./img/26.JPG" alt="combining everything in one matrix " />
 	<p align="right">
+		
 	5.	B: is a matrix called the control input matrix and u is the control vector. We will assume that there is no way to measure or know the exact acceleration of a tracked object. For example, if we were in an autonomous vehicle tracking a bicycle, pedestrian or another car, we would not be able to model the internal forces of the other object; hence, we do not know for certain what the other object's acceleration is. Instead, we will set Bu=0 and represent acceleration as a random noise with mean ν.
 		
 	6.	x′: The x′=Fx+Bu+ν equation does these prediction calculations for us but then Bu was crossed out leaving x′=Fx+ν. The noise mean = 0 is saying that the mean noise is zero. The equation then becomes x′=F∗x.o	x′: The x′=Fx+Bu+ν equation does these prediction calculations for us but then Bu was crossed out leaving x′=Fx+ν. The noise mean = 0 is saying that the mean noise is zero. The equation then becomes x′=F∗x.
 	<p align="right">
 	<img src="./img/26.JPG" alt="prediction calculations  " />
 	<p align="right">
+		
 	7.	P′=FPFT +Q represents this increase in uncertainty.
 	
 <p align="right">
