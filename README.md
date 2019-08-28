@@ -393,5 +393,11 @@ Now that we have learned how the extended Kalman filter works, in this section w
 <p align="center">
 
 1.	Explanation of the Data File
+
 	Lidar measurements are red circles, radar measurements are blue circles with an arrow pointing in the direction of the observed angle, and estimation markers are green triangles. The simulator will be using this data file, and feed main.cpp values from it one line at a time.
+	
+<p align="right">
+<img src="./img/51.JPG" alt="Data File" />
+<p align="right">
+*	Each row represents a sensor measurement where the first column tells you if the measurement comes from radar (R) or lidar (L).
 
