@@ -1,6 +1,6 @@
-[image1]: ./img/1.jpg "Gaussian"
+[image1]: (./img/1.jpg) "Gaussian"
 [image2]: ./img/2.jpg "Gaussian formula"
-[image3]: ./img/3.jpg "measurement cycle 
+[image3]: ./img/3.jpg "measurement cycle "
 [image4]: ./img/4.jpg "multiplying two Gaussians"
 [image5]: ./img/5.jpg "Motion Update"
 
@@ -10,7 +10,7 @@ In Kalman filters the distribution is given by what we called a Gaussian and a G
 
     •	The mean often abbreviated with the Greek letter Mu 
     •	The width of the Gaussian often called Variance.
-![alt text][image1]
+<img src=/img/1.jpg alt="Image" width="800" height="600" style="display: block; margin: 0 auto" />
 
 The formula of the Gaussian is presented below:
 
