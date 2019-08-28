@@ -363,5 +363,18 @@ Now we received the radar measurement (Polar coordinate system) at time k+2 and 
 <p align="center">
 <img src="./img/48.JPG" alt="Workflow of the extended kalman filter works." />
 <p align="center">
-	
+
+Notice: Because of two different worlds (Cartesian and Polar) we have to use two different measurement steps. If both the radar and laser measurements arrive at the same time, it uses one of the sensors then another sensor to prediction and measurement step.
+
+## Evaluating Kalman Filter Performanc:
+
+Once we have implemented our tracking Kalman filter algorithm, we might want to check its performance in terms how far the estimated result is from the true result, there are many evaluation metrics, but the most common one is what called Root Mean Squared Error.
+In the context of the tracking it is an accuracy metric used to measure deviation of the estimated state of the true state.
+At a given processing step, we need two values:
+
+*	The estimated values which is a vector with position and velocity components
+*	The real values that are usually known as ground truth.
+
+
+
 
