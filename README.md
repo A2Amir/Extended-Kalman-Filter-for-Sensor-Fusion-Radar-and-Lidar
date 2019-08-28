@@ -1,8 +1,9 @@
 ->[image1]: ./img/1.jpg "Gaussian" <-
 [image2]: ./img/2.jpg "Gaussian formula"
 [image3]: ./img/3.jpg "measurement cycle 
-[image4]: ./img/4.jpg "multiplying two Gaussians"{ style="display: block; margin: 0 auto" }
-[image5]: ./img/5.jpg "Motion Update"{ style="display: block; margin: 0 auto" }
+[image4]: ./img/4.jpg "multiplying two Gaussians"
+[image5]: ./img/5.jpg "Motion Update"
+
 ##Kalman Filter and Gaussian distribution
 In Kalman filters the distribution is given by what we called a Gaussian and a Gaussian is a continuous function over the space of locations in the area underneath sums up to one.A Gaussian is characterized by two parameters:
 
