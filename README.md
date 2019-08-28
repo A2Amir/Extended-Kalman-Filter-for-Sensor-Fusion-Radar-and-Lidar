@@ -24,7 +24,7 @@ The second cycle is the Motion Update (Prediction).
         Involves a convolution
         Uses total probability.
 
-##The first cycle is the Measurement Update:##
+ --------------- The first cycle is the Measurement Update:
 
 I am going to talk about the measurement cycle using Gaussians: Suppose we are localizing another vehicle which has a distribution (called prior) that looks like as follow (black line) now we get a measurement that tell us something about localization of the vehicle (blue line) .
 
