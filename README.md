@@ -376,5 +376,22 @@ At a given processing step, we need two values:
 *	The real values that are usually known as ground truth.
 
 
+The difference between ground truths and estimated values called residual, this residual are squared and averaged, and finally the square root gives us the error metric. The lower is the error the higher is the estimation accuracy.
 
+
+<p align="center">
+<img src="./img/49.JPG" alt="Root Mean Squared Error" />
+<p align="center">
+
+
+## Implementation of the Extended Kalman Filter for Sensor Fusion:
+
+Now that we have learned how the extended Kalman filter works, in this section we are going to implement the extended Kalman filter in C++. We are providing simulated lidar and radar measurements detecting a bicycle that travels around your vehicle. You will use a Kalman filter, lidar measurements and radar measurements to track the bicycle's position and velocity like below:
+
+<p align="center">
+<img src="./img/50.JPG" alt="Implementation of the Extended Kalman Filter for Sensor Fusion" />
+<p align="center">
+
+1.	Explanation of the Data File
+	Lidar measurements are red circles, radar measurements are blue circles with an arrow pointing in the direction of the observed angle, and estimation markers are green triangles. The simulator will be using this data file, and feed main.cpp values from it one line at a time.
 
