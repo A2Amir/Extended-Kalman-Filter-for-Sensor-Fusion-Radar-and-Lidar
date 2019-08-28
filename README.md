@@ -410,7 +410,12 @@ Now that we have learned how the extended Kalman filter works, in this section w
 
 *	You will use the measurement values and timestamp in your Kalman filter algorithm. Ground truth, which represents the actual path the bicycle took, is for calculating root mean squared error.
 
-2.	Reading in the Data
+2.		Reading in the Data
+
+*	It provided code that will read in and parse the data files for you. This code is in the main.cpp file. The main.cpp file creates instances of a MeasurementPackage.
+
+*	If you look inside 'main.cpp', you will see code like:
+
 
 
 
