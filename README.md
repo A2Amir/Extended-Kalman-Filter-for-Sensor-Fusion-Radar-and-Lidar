@@ -1,6 +1,6 @@
 
 
-##Kalman Filter and Gaussian distribution
+## Kalman Filter and Gaussian distribution
 In Kalman filters the distribution is given by what we called a Gaussian and a Gaussian is a continuous function over the space of locations in the area underneath sums up to one.A Gaussian is characterized by two parameters:
 
 
@@ -133,7 +133,10 @@ Based on the below diagram, the filter (first measurement) will receive initial 
 	
 *	We predict the pedestrian’s state by taking to account the elapsed time between the current and the pervious observations, because in the reality the time elapsed between two consecutive observations might vary and is not constant.
 
-		 We can use the timestamp values to compute the elapsed time 
+	1.	We can use the timestamp values to compute the elapsed time 
 		 between two consecutive observations and additionally
 		 we divide the result by 10^6 to transform it from microseconds to seconds
+		 <p align="rught">
+		<img src="./img/17.JPG" alt="timestamp" />
+		<p align="right">
 <p align="right">
