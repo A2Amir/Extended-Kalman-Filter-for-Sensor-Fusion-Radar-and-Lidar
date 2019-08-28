@@ -2,6 +2,7 @@
 [image2]: ./img/2.jpg "Gaussian formula"
 [image3]: ./img/3.jpg "measurement cycle "
 [image4]: ./img/4.jpg "multiplying two Gaussians"
+[image5]: ./img/5.jpg "Motion Update"
 ##Kalman Filter and Gaussian distribution
 In Kalman filters the distribution is given by what we called a Gaussian and a Gaussian is a continuous function over the space of locations in the area underneath sums up to one.A Gaussian is characterized by two parameters:
 
@@ -36,4 +37,7 @@ By multiplying two Gaussians (prior and Measurement), the new mean and covarianc
 
 ![alt text][image4]
 
-###The second cycle is the Motion Update (Prediction):
+### The second cycle is the Motion Update (Prediction):
+Suppose the robot lives in the life like below (blue line) and want to move to the right side with a certain distance, the motion(green line) has itself its own set of uncertainty r2 (because the motion tends to lost information ), which adds to the uncertainty of the current uncertainty σ2 and leads to a new Gaussian with high uncertainty  σ2 prime (red line):
+
+![alt text][image5]
