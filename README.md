@@ -214,7 +214,7 @@ Uses new observations to correct our belief about the state of the predictions a
 	
 Notice: the state of the pedestrian’s position and velocity is updated asynchronously each time the measurement received regardless of the source sensor.
 	
-### 	Update Step for Laser Measurement:
+## 	Update Step for Laser Measurement:
 
 1.	H (state transition matrix) we use the measurement function to map the state vector into the measurement space of the sensor. To give a concrete example, lidar only measures an object's position (px, py) but the extended Kalman filter models an object's position and velocity. So multiplying by the measurement function H matrix will drop the velocity information from the state vector x.
 
