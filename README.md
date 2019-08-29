@@ -63,7 +63,7 @@ Suppose we have 2D state (x and y position) in our case, you might have a car th
     
 At time t=0 you observe the object of interest to be at the coordinate t=0, one time step later you see over here (t=1) and so on. A Kalman filter allows you to figure out what the velocity of the object is and uses the velocity estimate to make a good prediction about the future location of an object (the velocity is inferred from seeing multiple positions).
 
-## To explain a kalman filter for many dimension I have to explain high dimensional Gaussian, which often called Multivariate Gaussian:
+#####  To explain a kalman filter for many dimension I have to explain high dimensional Gaussian, which often called Multivariate Gaussian:
 
 The mean is now a vector for each of the dimensions:
 <p align="center">
@@ -100,13 +100,13 @@ By multiplying the measurement and prior Gaussians, you get a Gaussian (black li
 <img src="./img/12.JPG" alt=" Example  " />
 <p align="center">
 
-# Big Lesson:
-## The Variables of a Kalman Filter 
+## Big Lesson:
+### The Variables of a Kalman Filter 
 	Often called State because they reflect the state of the physical world like position and velocity.
 	They separate into two subsets:
         o	Observable (like the position)
-        o	Hidden which can never directly observed (in our example velocity)
-		and because these two thing interact (observable variables give us information about hidden information) we can 		estimate or inference what these hidden variables are.
+        o	Hidden which can never directly observed (in our example velocity) and because these two thing interact 
+	 	(observable variables give us information about hidden information) we can estimate or inference what these hidden 		    variables are.
 <p align="center">
 <img src="./img/13.JPG" alt=" Variables of a Kalman Filter   " />
 <p align="center">
