@@ -1,8 +1,7 @@
 #include "kalman_filter.h"
 #include <math.h>
-//#include <iostream>
-#define PI 3.14159265
-#define TAU 2 * PI
+
+
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
 using namespace std;
@@ -47,7 +46,6 @@ void KalmanFilter::UpdateEKF(const VectorXd& z,
                              const VectorXd& z_pred,
                              const MatrixXd& H,
                              const MatrixXd& R) {
-  const double PI  =3.141592653589793238463;
 
   /*
   float rho = sqrt(x_(0)*x_(0) + x_(1)*x_(1));
@@ -61,7 +59,8 @@ void KalmanFilter::UpdateEKF(const VectorXd& z,
   VectorXd z_pred(3);
   z_pred << rho, phi, rho_dot; 
   */
-  
+  const double  PI = 3.14159265;
+  const double TAU = 2 * PI;
  
   const VectorXd y = z - z_pred;
   
