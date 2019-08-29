@@ -42,7 +42,7 @@ By multiplying two Gaussians (prior and Measurement), the new mean and covarianc
 
 
 ### The second cycle is the Motion Update (Prediction):
-Suppose the robot lives in the life like below (blue line) and want to move to the right side with a certain distance, the motion(green line) has itself its own set of uncertainty r2 (because the motion tends to lost information ), which adds to the uncertainty of the current uncertainty σ2 and leads to a new Gaussian with high uncertainty  σ2 prime (red line):
+Suppose the robot lives in the life like below (blue line) and want to move to the right side with a certain motion, the motion(green line) has itself its own set of uncertainty r2 (because the motion tends to lost information ), which adds to the uncertainty of the current uncertainty σ2 and leads to a new Gaussian with high uncertainty  σ2 prime (red line):
 <p align="center">
 <img src="./img/5.jpg" alt="The second cycle is the Motion Update (Prediction) " />
 <p align="center">
@@ -52,7 +52,7 @@ This leads to increased uncertainty over the initial uncertainty and the maths f
 <img src="./img/6.JPG" alt="uncertainty over the initial uncertainty  " />
 <p align="center">
 
-## That was a full kalman filter for 1D case but in the reality, we have many dimensions:
+#### That was a full kalman filter for 1D case but in the reality, we have many dimensions:
 
 Suppose we have 2D state (x and y position) in our case, you might have a car that uses a Radar to detect the location of other vehicles over time (the sensor itself only sees positions and it never sees the actual velocity), what the 2D kalman filter affords you is something amazing.
 
