@@ -91,8 +91,10 @@ For two-dimensional space, a two dimensional Gaussian is defined over the space 
     
 Suppose we have two dimensions (one for the location, which is observable from the sensor and denoted by x, and one for the velocity, which is not observable from the sensor and denoted by x dot) 
 
-        •	you have a correlation Gaussian called prior (we know our locations is correlated to the velocity, much faster I move, the further is the location ) 
+        •	you have a correlation Gaussian called prior
+		(we know our locations is correlated to the velocity, much faster I move, the further is the location ) 
         •	you got a new measurement about the location (measurement) but you know nothing about the velocity)
+
 By multiplying the measurement and prior Gaussians, you get a Gaussian (black line) that sits on the middle and has a good estimate what your velocity is and where your location is.
 <p align="center">
 <img src="./img/12.JPG" alt=" Example  " />
@@ -103,13 +105,14 @@ By multiplying the measurement and prior Gaussians, you get a Gaussian (black li
 	Often called State because they reflect the state of the physical world like position and velocity.
 	They separate into two subsets:
         o	Observable (like the position)
-        o	Hidden which can never directly observed (in our example velocity) and because these two thing interact (observable variables give us information about hidden information) we can estimate or inference what these hidden variables are.
+        o	Hidden which can never directly observed (in our example velocity)
+		and because these two thing interact (observable variables give us information about hidden information) we can 		estimate or inference what these hidden variables are.
 <p align="center">
 <img src="./img/13.JPG" alt=" Variables of a Kalman Filter   " />
 <p align="center">
 	
 ## Extended Kalman Filter:
-### It is extended in the sense that it will be capable of handling more complex motion model and measurement models and consists of an endless loop of prediction and update state.
+##### It is extended in the sense that it will be capable of handling more complex motion model and measurement models and consists of an endless loop of prediction and update state.
 
 Imagine you are in a car equipped with sensors on the outside. The car sensors can detect objects moving around: for example, the sensors might detect a pedestrian. Let's step through the Kalman Filter algorithm using the pedestrian example. We have two sensors(a Lidar and a Radar) and the information provided be these two sensors is used to estimate the state of a moving pedestrian and this state is presented by a 4D state  vector( a x,y position and a x,y velocity).
 
