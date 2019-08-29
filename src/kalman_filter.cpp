@@ -1,7 +1,8 @@
 #include "kalman_filter.h"
-//#include <math.h>
+#include <math.h>
 //#include <iostream>
-
+#define PI 3.14159265
+#define TAU 2 * PI
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
 using namespace std;
@@ -46,6 +47,7 @@ void KalmanFilter::UpdateEKF(const VectorXd& z,
                              const VectorXd& z_pred,
                              const MatrixXd& H,
                              const MatrixXd& R) {
+  const double PI  =3.141592653589793238463;
 
   /*
   float rho = sqrt(x_(0)*x_(0) + x_(1)*x_(1));
@@ -59,11 +61,28 @@ void KalmanFilter::UpdateEKF(const VectorXd& z,
   VectorXd z_pred(3);
   z_pred << rho, phi, rho_dot; 
   */
-
+  
+ 
   const VectorXd y = z - z_pred;
+  
+ // normalize the angle between -pi to pi
+  while (y(1) > PI || y(1) < -PI)
+  {
+    if (y(1) > PI)
+    {
+      y(1) -= TAU;
+    }
+    else if (y(1) < -PI)
+    {
+      y(1) += TAU;
+    }
+  }
+ 
+ 
   const MatrixXd Ht = H.transpose();
-  const MatrixXd S = H * P_ * Ht + R;
-  const MatrixXd K = P_ * Ht * S.inverse();
+  const MatrixXd PHt_ = P_ * Ht;
+  const MatrixXd S = H * PHt_ + R;
+  const MatrixXd K = PHt_ * S.inverse();
 
   //new estimate
   x_ = x_ + (K * y);
