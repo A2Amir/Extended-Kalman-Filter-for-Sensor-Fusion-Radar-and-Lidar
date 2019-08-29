@@ -100,13 +100,13 @@ By multiplying the measurement and prior Gaussians, you get a Gaussian (black li
 <img src="./img/12.JPG" alt=" Example  " />
 <p align="center">
 
-## Big Lesson:
-### The Variables of a Kalman Filter 
+### Big Lesson:
+#### The Variables of a Kalman Filter 
 	Often called State because they reflect the state of the physical world like position and velocity.
 	They separate into two subsets:
         o	Observable (like the position)
         o	Hidden which can never directly observed (in our example velocity) and because these two thing interact 
-	 	(observable variables give us information about hidden information) we can estimate or inference what these hidden 		    variables are.
+	 	(observable variables give us information about hidden information) we can estimate or inference what these hidden variables are.
 <p align="center">
 <img src="./img/13.JPG" alt=" Variables of a Kalman Filter   " />
 <p align="center">
