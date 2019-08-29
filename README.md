@@ -93,7 +93,7 @@ Suppose we have two dimensions (one for the location, which is observable from t
 
         •	you have a correlation Gaussian called prior
 		(we know our locations is correlated to the velocity, much faster I move, the further is the location ) 
-        •	you got a new measurement about the location (measurement) but you know nothing about the velocity)
+        •	you got a new measurement about the location but you know nothing about the velocity
 
 By multiplying the measurement and prior Gaussians, you get a Gaussian (black line) that sits on the middle and has a good estimate what your velocity is and where your location is.
 <p align="center">
