@@ -519,7 +519,7 @@ Every time main.cpp calls fusionEKF.ProcessMeasurement(measurement_pack_list[k])
 ##	Result
 
 <p align="center">
-<img src="./img/55.JPG" alt="'main.cpp'" />
+<img src="./img/44.gif" alt="'main.cpp'" />
 <p align="center">
 
 @Amir Ziaee
